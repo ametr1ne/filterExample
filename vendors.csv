@@ -1,0 +1,418 @@
+Категория,Вендор,Продукт,Какого вендора заменяет,Какой продукт заменяем
+Виртуализация,ASTRA LINUX,Vmmanager,"Vmware
+Citrix
+Microsoft
+Red Hat","VMware vSphere 7 Essentials Kit for 3 hosts
+VMware vSphere 7 Standard for 1 processor
+VMware Workstation 16 Pro for Linux and Windows
+VMware vCenter Server 7 Standard for vSphere 7 (Per Instance)
+VMware vSphere 7 Essentials Plus Kit for 3 hosts (Max 2 processors per host)
+VMware vSphere 7 Enterprise Plus for 1 processor
+VMware Workstation 16 Player for Linux and Windows
+VMware vSphere 7 Remote Office Branch Office Standard (25 VM pack)
+VMware vSphere 7 Standard Acceleration Kit for 6 processors
+VMware vCenter Server 7 Foundation for vSphere 7
+
+Citrix Virtual Apps / Virtual Apps&Desktops 
+Citrix Virtual Apps (ранее Citrix XenApp)
+Citrix Standard Edition
+Citrix Advanced Edition
+
+Microsoft Hyper-V
+
+Red Hat Virtualization"
+,,Комплекс средств виртуализации «Брест»,,
+,,Termidesk ,,
+,BaseALT,Альт Сервер Виртуализации 10,,
+,,Альт Сервер Виртуализации 9,,
+,АО «НИИ «Масштаб»,Корпоративная облачная платформа ЕСР VeiL,,
+,,Платформа виртуализации рабочих столов VeiL VDI,,
+,HOSTVM,HOSTVM,,
+,,HOSTVM VDI,,
+,РОСА,ROSA Virtualization,,
+,Инфолэнд,zVirt,,
+,,Термит,,
+,RED SOFT,РЕД Виртуализация,,
+,Росплатформа,Р-Виртуализация,,
+,,Р-Хранилище,,
+,СКАЛА-Р,СКАЛА-Р,,
+,ТИОНИКС,TIONIX Cloud Manager,,
+,,TIONIX Cloud Platform,,
+,,TIONIX VDI,,
+,Шаркс Датацентр,SharxBase,,
+,,SharxDesk,,
+"ВКС, Коммуникации",QCONF,QCONF,"ZOOM
+Microsoft
+","Microsoft Teams
+Microsoft Skype для бизнеса
+Zoom Meetings"
+,Мираполис,Mirapolis HCM,,
+,,Virtual Room,,
+,TrueConf,TrueConf Server,,
+,VideoMost,VideoMost,,
+,Vinteo,Vinteo,,
+,Webinar,Webinar,,
+,,We.Study,,
+,Aurus Outbound,Aurus Outbound,,
+,CommuniGate Systems,CommuniGate Pro Corporate,,"Microsoft Teams
+Microsoft Skype для бизнеса
+Microsoft Exchange
+Microsoft Sharepoint
+Zoom Meetings"
+,,CommuniGate Pro Unified,,
+,,CommuniGate Pro MessagePlus. Базовый функционал,,
+,,CommuniGate Pro IM,,
+,,CommuniGate Pro VoIP,,
+,CraftTalk,CraftTalk Чат-Бот,,"Microsoft Teams
+Microsoft Skype для бизнеса
+Zoom Meetings"
+,,CraftTalk Чат-Платформа,,
+,,Платформа CraftTalk,,
+,,CraftTalk База Знаний,,
+,Cybrus,Сибрус,,
+,ООО «Диалог»,Dialog,,
+,Эрливидео,Flussonic Media Server,,
+,,Flussonic Watcher,,
+,VK WorkSpace,VK Teams,,
+,,VK WorkDisk,,
+,,VK WorkMail,,
+Операционные системы,ASTRA LINUX,Astra Linux Special Edition (релиз Орел),"Microsoft
+RedHat","MIcrosoft Windows Home
+Microsoft Windows Professional
+Microsoft Windows Server Standard
+Microsoft Windows Server Datacentr
+
+Red Hat Enterprise Linux Server
+Red Hat Enterprise Linux for IBM POWER
+Red Hat Enterprise Linux Desktop
+Red Hat Enterprise Linux for IBM System z"
+,,Astra Linux Special Edition (релиз Смоленск),,
+,,Astra Linux Special Edition (релиз Воронеж),,
+,,ALD Pro,,
+,BaseALT,Альт Рабочая станция 10,,
+,,Альт Образование 10,,
+,,Альт Рабочая станция 9,,
+,,Альт Сервер 10,,
+,,Альт Сервер 9,,
+,,Альт 8 СП,,
+,,Альт Образование 9,,
+,RED SOFT,РЕД ОС,,
+,РОСА,РОСА «ХРОМ»,,
+,,РОСА «КОБАЛЬТ»,,
+,,ROSA Enterprise Desktop,,
+,,ROSA Enterprise Linux Server,,
+,,РОСА «НИКЕЛЬ»,,
+,Pragmatic Tools,Pragmatic Tools Migrator,,
+,Solos,solOS,,
+,"АО «НППКТ», ОС Основа",ОС ОСнова,,
+,,ОС ОН Стрелец,,
+,НЦПР,МСВСфера АРМ,,
+,,МСВСфера Сервер,,
+Системное ПО и администрирование,10-Strike Software,10-Strike LANState,,
+,,«10-Страйк: Мониторинг Сети»,,
+,,10-Strike LANState Pro,,
+,,«10-Страйк: Полный набор программ администратора»,,
+,,«10-Страйк: Мониторинг Сети Pro»,,
+,,«10-Страйк: Учет Трафика»,,
+,,«10-Страйк: Схема Сети»,,
+,,10-Strike Connection Monitor,,
+,,10-Strike Connection Monitor Pro,,
+,,10-Strike Network File Search,,
+,,10-Strike Network File Search Pro,,
+,AnyDesk,AnyDesk,TeamViewer,TeamViewer
+,LiteManagerTeam,LiteManager,,
+,TektonIT,RMS Удаленный доступ 7.1,,
+,САФИБ,АССИСТЕНТ,,
+,Фаматек,Фаматек Radmin 3.5,,
+,Avanpost,Avanpost FAM,One Identity,"Active Roles
+Cloud Access Manager
+Defender
+Enterprise Single Sign-on
+One Identity Manager – Data Governance Edition (1IM –DGE)
+One Identity Manager (1IM)
+Password Manager
+Privileged Access Suite for Unix
+"
+,,Avanpost IDM,,
+,,Avanpost PKI,,
+,,Avanpost Web SSO,,
+,ЭРФИД,Универсальный драйвер ЭРФИД,,
+,,ЭРФИД-А,,
+,,ЭРФИД-М,,
+,Kerish Products,Kerish Doctor 2022,,
+,Простой Софт,Анализ результатов поиска,,
+,,PsPhone,,
+,,PsMobile,,
+,,Простой сайт,,
+,,Prostoysoft Tables,,
+,,Учет посетителей,,
+,,Учет книг,,
+,,PSMobileScan,,
+,,Учет компьютеров,,
+,,Мои диски,,
+СУБД,Arenadata,Arenadata,"Microsoft
+Oracle","Microsoft SQL Server
+Oracle Database"
+,NitrosData,NitrosBase,,
+,Postgres Professional,Postgres Pro AC Enterprise,,
+,,Postgres Pro AC Enterprise для 1С:Предприятие,,
+,,Postgres Pro AC Standard,,
+,,Postgres Pro Enterprise (сертифицированная версия),,
+,,Postgres Pro Enterprise для 1С:Предприятие (сертифицированная версия),,
+,,Postgres Pro Certified,,
+,RED SOFT,СУБД Ред База Данных 3.0,,
+,Релэкс,СУБД Линтер Стандарт,,
+,,СУБД Линтер Бастион,,
+,"АО «НППКТ», ОС Основа",СУБД ЛИРА-Р,,
+Облачные мощности,Облачная платформа Softline,Облачная платформа Softline,Microsoft,Microsoft Azure
+,,Виртуальный офис Softline,,
+САПР,АСКОН,КОМПАС-3D V20,"Autodesk
+SolidWorks
+Siemens","Autodesk AutoCAD LT
+Autodesk AutoCAD
+Autodesk Civil
+Solidworks
+SiemensPLMS"
+,,КОМПАС-3D HOME,,
+,,КОМПАС-График V20,,
+,,КОМПАС-Строитель V20,,
+,,КОМПАС-Электрик V20,,
+,,КОМПАС-Электрик Express V20,,
+,Панорама КБ,ГИС Панорама Мини,Autodesk,"Autodesk AutoCAD LT
+Autodesk Civil"
+,,Комплект программ «АРМ градостроителя»,,
+,,ГИС Панорама-АГРО,,
+,,Комплект программ «АРМ агронома»,,
+,,Комплекс геологических задач,,
+,,Панорама АРМ кадастрового инженера,,
+,,Панорама АРМ геолога,,
+,,"Профессиональная ГИС ""Панорама""",,
+,,Панорама GIS Toolkit,,
+,,ГИС Панорама АВТО,,
+,,ГИС Панорама ЗЕМЛЕДЕЛИЕ,,
+,,Панорама Муниципальная ГИС Земля и недвижимость,,
+,«НТЦ ГеММа»,CheckNC,Autodesk,"Autodesk AutoCAD LT
+Autodesk AutoCAD"
+,,ГеММа-3D. Верификатор,,
+,,«ГеММа-3D»,,
+,Кредо-Диалог,КРЕДО ДАТ,Autodesk,"Autodesk AutoCAD LT
+Autodesk AutoCAD"
+,,КРЕДО ДИСЛОКАЦИЯ,,
+,,КРЕДО ГЕОЛОГИЯ,,
+,,КРЕДО КАДАСТР,,
+,,КРЕДО ТРУБОПРОВОД.ИЗЫСКАНИЯ,,
+,,КРЕДО ГЕОКОЛОНКА,,
+,,КРЕДО ТРУБЫ,,
+,CSoft Development,CSoft Model StudioCS 3.0,Autodesk,"Autodesk AutoCAD LT
+Autodesk AutoCAD"
+,,CSoft СПДС GraphiCS 2022,,
+,,CSoft СПДС Железобетон 2022,,
+,,CSoft GeoniCS 2022,,
+,,CSoft Electrics 3D 2021,Altium,Altium Designer 2021
+,LIRA Soft,ЛИРА 10.12,Autodesk,"Autodesk AutoCAD LT
+Autodesk AutoCAD"
+,Нанософт,Платформа nanoCAD 22,,
+,,nanoCAD BIM Конструкции 22,,
+,,nanoCAD Металлоконструкции 22,,
+,,nanoCAD BIM Вентиляция,,
+,,nanoCAD Стройплощадка 22,,
+,,nanoCAD Корпоративная лицензия 22,,
+,,nanoCAD BIM Электро 22,,
+,,nanoCAD BIM Отопление 22,,
+,Normcad,Normcad,,
+,Renga,Renga для архитектора,,
+,,Renga для инженера по вентиляции,,
+,,Renga для инженера по водоснабжению и водоотведению,,
+,,Renga для инженера по отоплению,,
+,,Renga для инженера по электрическим сетям,,
+,,Renga для конструктора,,
+,SCAD Soft,SCAD Office,,
+,,SCAD Конструктор сечений,,
+,,SCAD Магнум,,
+,,SCAD Монолит,,
+,НПФ «Топоматик»,Топоматик Robur – Инженерные сети,,
+,,Топоматик Robur – Автомобильные дороги,,
+,,Топоматик Robur – Дорожная одежда,,
+,,Топоматик Robur – Искусственные сооружения,,
+,СПРУТ-Технология,SprutCAM,,
+,Инфострой,Система ПИР,,
+Офисные приложения,ALMIPartner,AlterOffice,Microsoft,"Microsoft Office Standard
+Microsoft Office Professional"
+,ASTRA LINUX,Workspad,,
+,BaseALT,Совместное решение Базальт СПО с МойОфис для государственных заказчиков,,
+,АО «Р7»,«Р7-Офис» для юридических лиц,,
+,,«Р7-Офис» для высших образовательных учреждений,,
+,,«Р7-Офис» для разработчиков,,
+,МойОфис,МойОфис Стандартный,,
+,,Mailion,,
+,,МойОфис Профессиональный,,
+,,МойОфис Частное Облако,,
+,,МойОфис Защищенное облако,,
+,,МойОфис Почта,,Microsoft Outlook
+Резервное копирование данных,ASTRA LINUX,RuBackup,"Veeam
+Veritas
+Acronis","Veeam Backup & Replication
+Veeam Backup Essentials
+Veeam ONE
+
+Veritas
+
+ Acronis True Image
+"
+,Paragon Software,Microsoft NTFS for Mac by Paragon Software,,
+,,Paragon ExtFS for Mac OS X,,
+,,HFS+ for Windows by Paragon Software,,
+,,APFS for Linux by Paragon Software,,
+,,APFS for Windows by Paragon Software,,
+,,Paragon File System Link Business Suite,,
+,,Paragon Backup & Recovery Business,,
+,,Microsoft NTFS for Linux by Paragon Software,,
+,Киберпротект,Кибер Бэкап,,
+,,Кибер Бэкап Расширенная,,
+,,Кибер Инфраструктура,,
+,,Кибер Протего,,
+Работа с файлами,ABBYY,ABBYY Finereader PDF 15 Business,"Adobe
+Foxit","Adobe Acrobat
+Foxit Reader"
+,,ABBYY Finereader PDF 15 Standard,,
+,,ABBYY Finereader PDF 15 Corporate,,
+,AMS Software,PDF Commander,,
+,Code Industry,Master Pdf Editor,,
+,SETERE OCR,SETERE OCR,,
+,Wondershare,Wondershare PDFelement,,
+,Анти-Плагиат,Анти-Плагиат,,
+ПО для разработчиков,Bellsoft,Liberica Runtime Container Pro,,
+,,Liberica JDK,,
+,,Liberica Native Image Kit Pro,,
+,,LiberCat,,
+,,LiberCat/LiberCatEE + Liberica JDK,,
+,Elecard,Elecard,,
+,Qase,Qase,,
+Графика и дизайн,Inmagine,123RF,"Adobe
+Corel",Adobe Stock
+,,Designs.ai Designmaker,,"Adobe Photoshop
+ CorelDRAW Graphics Suite"
+,,Designs.ai Logomaker,,
+,,Designs.ai,,
+,,Pixlr,,
+,«АКВИС»,AKVIS Artifact Remover AI,,
+,,AliveColors,,
+,AMS Software,PhotoDiva,,
+,,ФотоВИНТАЖ,,
+,,ФотоДОКТОР,,
+,,ФотоКОЛЛАЖ,,
+,MOVAVI,Movavi Picverse,,
+,,Movavi СлайдШОУ,,
+,,Movavi Видеоредактор Плюс,,"Adobe Premiere Pro
+Corel VideoStudio"
+,,Movavi Конвертер Видео,,
+,,Movavi Video Suite,,
+,grapecity,grapecity,Think-cell,Think-cell
+,Wondershare,Wondershare EdrawMax,Think-cell,Think-cell
+,,Wondershare EdrawInfo,,
+,АО «Информатика»,АСМОграф,Corel,CorelDRAW Graphics Suite
+,ООО «Ричмедиа»,iSpring Suite,,
+,,iSpring Suite Конструктор курсов,,
+,,iSpring Learn,,
+,ConceptDraw,ConceptDraw PRO,"Think-cell
+Miro","Think-cell
+Miro"
+"Управление бизнесом, CRM/ERP",Синезис,Синезис,,
+,1C,1C,,
+,Albato,Albato,,
+,Барсум,Barsum Office/Pro,,
+,Comindware Business Application Platform,Comindware Business Application Platform,"Terrasoft CRM, SAP CRM, Oracle Siebel CRM, Salesforce","Terrasoft CRM, SAP CRM, Oracle Siebel CRM, Salesforce"
+,Простой Софт,Архив документов,,
+,,Управление проектами,,
+,,Склад и торговля,,
+,,Учет клиентов,,
+,,Учет пациентов,,
+,	Projecto,Projecto,Microsoft,Microsoft Project
+,Comindware Business Application Platform,Comindware Business Application Platform,,
+ИБП,Импульс,Импульс,,
+,Парус электро,Парус электро,,
+"ПК, ноутбуки, моноблоки",SL computers,SL computers,,
+Серверное оборудование,SL computers,SL computers,,
+Сетевое оборудование,Qtech,Qtech,,
+Перефирийное оборудование,PANTUM,PANTUM,,
+Образование,eQueo,eQueo,,
+,«Экзамус Прокторинг»,«Экзамус Прокторинг»,,
+,L2U,L2U База Знаний InKnowledge,,
+,Labmedia,Labmedia «Электронный курс»,,
+,Play,MOTIVITY,,
+,ProctorEdu,ProctorEdu,,
+,Милдсофт,StartExam,,
+,ООО «Интернет школа»,Teachbase,,
+,Uchi.pro,Uchi.pro,,
+,Unicraft,Unicraft,,
+Информационная безопасность,Dr.Web,Dr.Web Desktop Security Suite,"Eset 
+Avast",
+,,Комплект Dr.Web «Малый бизнес»,,
+,,Dr.Web Server Security Suite,,
+,,Dr.Web Mail Security Suite,,
+,«Лаборатория Касперского»,Kaspersky Endpoint Security для бизнеса Стандартный,,"TrendMicro Apex One, Symantec Endpoint Protection, ESET Protect, Microsoft Defender, McAfee Endpoint Security"
+,,Kaspersky Endpoint Security для бизнеса Расширенный,,
+,,Kaspersky Total Security для бизнеса,,
+,,Kaspersky Endpoint Detection and Response,,
+,,Kaspersky Symphony Security,,
+,,Kaspersky Security для виртуальных и облачных сред,,"Trend Micro Hybrid Cloud Security, McAfee MOVE AntiVirus, Eset Virtualization Security"
+,,Kaspersky Industrial CyberSecurity for Nodes,,"Trend Micro Industrial Endpoint Security, McAfee Endpoint Security, Symantec Endpoint Protection"
+,,Kaspersky Security для интернет-шлюзов,,"Checkpoint Secure Web Gateway, Fortinet FortiGate, Cisco WSA, ForcePoint Web Security - Websense, Kerio Control, TrendMicro Web Security, Symantec BlueCoat "
+,,Kaspersky Security для почтовых серверов,,"Fortinet FortiMail, Cisco IronPort , Barracuda Email Security Gateway, TrendMicro Email Security"
+,,Kaspersky Endpoint Security Cloud,,
+,,Kaspersky Small Office Security,,
+,,Kaspersky Unified Monitoring and Analysis Platform,,
+,	Positive Technologies,	Positive Technologies,QRadar SIEM,QRadar SIEM
+,UserGate,UserGate Межсетевой экран с сертификатом ФСТЭК,CheckPoint,CheckPoint межсетевой экран
+,Digt,,,
+,Gemalto (Thales),,,
+,Infowatch,Infowatch,CheckPoint,CheckPoint межсетевой экран
+,LissiSoft,,,
+,Performix,Performix AdGuard Personal,,
+,SearchInform,SearchInform,,
+,Атом Безопасность,StaffCop Enterprise,,
+,S-Terra,С-Терра Шлюз,,
+,,С-Терра Клиент,,
+,,С-Терра L2,,
+,,С-Терра Виртуальный шлюз,,
+,,С-Терра КП,,
+,zecurion,Device Control (Zlock),,
+,,Discovery (Zdiscovery),,
+,,Storage Security (Zserver),,
+,,Traffic Control (Zgate),,
+,Актив,Рутокен VPN,,
+,,Рутокен ЭЦП (Rutoken),,
+,,Рутокен ЭЦП Flash (Rutoken),,
+,,Рутокен S (Rutoken),,
+,,Рутокен Lite (Rutoken),,
+,,Актив Рутокен U2F,,
+,Аладдин Р.Д.,JaCarta,,
+,,Смарт-карт ридер JCR721,,
+,,JaCarta SecurLogon,,
+,,Secret Disk 5,,
+,,Secret Disk Server NG,,
+,АЛТЭКС-СОФТ,RedCheck,,
+,,Check,,
+,,Net_Check,,
+,Газинформсервис,Газинформсервис,,
+,Код безопасности,Код безопасности,,
+,Крипто-Про,КриптоПро CSP,,
+,,КриптоАРМ,,
+,,Крипто-Про JCP,,
+,НПО «Эшелон»,НПО «Эшелон»,,
+,ООО «Оксиджен Софтвер»,Аналитический Центр Криминалист,,
+,,Мобильный Криминалист,,
+,,Мобильный Криминалист Enterprise,,
+,,Мобильный Криминалист Десктоп,,
+,,Мобильный Криминалист Детектив,,
+,Рубинтех,Рубинтех,,
+,Смарт-Cофт,Traffic Inspector Anti-Virus powered by Kaspersky,,
+,,Traffic Inspector Anti-Spam powered by Kaspersky,,
+,,Traffic Inspector GOLD,,
+,,Adguard для Traffic Inspector,,
+,Стахановец,Стахановец,,
+,Центр безопасности информации (ЦБИ),ЦБИ TERRIER 3.0,,
+,,ЦБИ Ревизор,,
+,,ЦБИ Ревизор сети,,
+,,ЦБИ Астра,,
+,,ЦБИ Агент инвентаризации,,

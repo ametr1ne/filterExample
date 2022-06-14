@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 100px;
+    }
+    .items {
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .item {
+        max-width: 150px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    h2 {
+        padding: 20px;
+        background: black;
+        color: white;
+    }
+    .filter {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+    }
+    .body {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<div>
+    <h2>Поиск</h2>
+    <input class="input" type="text">
+    <button class="btn" type="button">Найти</button>
+
+    <div class="items"></div>
+
+    <h2>Фильтры</h2>
+
+    <div class="filter">
+        <div class="left">
+            <form>
+                <button class="btn-reset" type="reset">Сбросить</button>
+                <div class="widget vendors">
+                    <h3 class="title">Вендор</h3>
+                    <div class="body">
+                        <label>
+                            <input data-group="vendor" data-param="apple" id="vendor1" type="checkbox">
+                            <span>apple</span>
+                        </label>
+                        <label>
+                            <input data-group="vendor" data-param="google" type="checkbox">
+                            <span>google</span>
+                        </label>
+                        <label>
+                            <input data-group="vendor" data-param="facebook" type="checkbox">
+                            <span>facebook</span>
+                        </label>
+                        <label>
+                            <input data-group="vendor" data-param="amazon" type="checkbox">
+                            <span>amazon</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="widget products">
+                    <h3 class="title">Продукт</h3>
+                    <div class="body">
+                        <label>
+                            <input data-group="product" data-param="bread" type="checkbox">
+                            <span>Хлеб</span>
+                        </label>
+                        <label>
+                            <input data-group="product" data-param="pie" type="checkbox">
+                            <span>Пирожок</span>
+                        </label>
+                        <label>
+                            <input data-group="product" data-param="milk" type="checkbox">
+                            <span>Молоко</span>
+                        </label>
+                        <label>
+                            <input data-group="product" data-param="cake" type="checkbox">
+                            <span>Торт</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="widget directions">
+                    <h3 class="title">Направления</h3>
+                    <div class="body">
+                        <label>
+                            <input data-group="direction" data-param="right" type="checkbox">
+                            <span>Вправо</span>
+                        </label>
+                        <label>
+                            <input data-group="direction" data-param="left" type="checkbox">
+                            <span>Влево</span>
+                        </label>
+                        <label>
+                            <input data-group="direction" data-param="forward" type="checkbox">
+                            <span>Вперед</span>
+                        </label>
+                        <label>
+                            <input data-group="direction" data-param="back" type="checkbox">
+                            <span>Назад</span>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="right">
+            <h1>Альтернативные вендоры и продукты взамен ушедших с рынка</h1>
+            <h3 class="list-item apple bread left">Аналог apple, хлеба, влево</h3>
+            <h3 class="list-item google bread right">Аналог google, хлеба, вправо</h3>
+            <h3 class="list-item facebook cake back">Аналог facebook, торта, назад</h3>
+            <h3 class="list-item amazon pie forward">Аналог amazon, пирожка, вперед</h3>
+            <h3 class="list-item amazon milk back">Аналог amazon, молока, назад</h3>
+            <h3 class="list-item apple milk left">Аналог apple, молока, влево</h3>
+            <h3 class="list-item google pie forward">Аналог google, пирожка, вперед</h3>
+        </div>
+    </div>
+</div>
+
+<!--<script>-->
+<!--    const array = [-->
+<!--        'kaspersky', '1C', 'AliveColors', 'Parther', 'AMS', 'Astra Linux', 'Base', 'Communigate', 'Масштаб', 'item9', 'item10', 'item11', 'item12', 'item13', 'item14', 'item15', 'item16', 'item17', 'item18', 'item19', 'item20', 'item21', 'item22', 'item23', 'item24', 'item25', 'item26', 'item27', 'item28',-->
+<!--    ];-->
+
+<!--    const btn = $('.btn');-->
+
+<!--    let value = new RegExp($('.input').val())-->
+
+<!--    $(array).each(function (i, e) {-->
+
+<!--        if (value.test(e)) {-->
+<!--            $('.items').append('<p class="item">' + e + '</p>')-->
+<!--        }-->
+<!--    })-->
+
+<!--    btn.on('click', function () {-->
+
+<!--        let value = new RegExp($('.input').val())-->
+
+<!--        $('.item').remove()-->
+
+<!--        $(array).each(function (i, e) {-->
+
+<!--            if (value.test(e)) {-->
+<!--                $('.items').append('<p class="item">' + e + '</p>')-->
+<!--            }-->
+<!--        })-->
+<!--    })-->
+
+<!--    /* // Поиск */-->
+
+<!--    /* Фильтр */-->
+
+<!--    let bigString = '';-->
+
+<!--    $('input').on('change', function () {-->
+
+<!--        $('input').each(function (ind, elem) {-->
+<!--            if ($(elem).is(':checked')) {-->
+<!--                bigString += '.' + $(elem).data('param')-->
+<!--            }-->
+<!--        })-->
+
+<!--        $('.list-item').hide()-->
+<!--        $(bigString).show()-->
+
+<!--        bigString = '';-->
+<!--    })-->
+
+<!--    $('.btn-reset').on('click', function () {-->
+<!--        $('.list-item').show()-->
+<!--    })-->
+<!--</script>-->
+
+</body>
+</html>
