@@ -5,188 +5,287 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="object.js"></script>
     <script defer src="main.js"></script>
     <title>Document</title>
 </head>
 <body>
 
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        margin-bottom: 100px;
-    }
-    .items {
-        display: grid;
-        flex-wrap: wrap;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    .item {
-        max-width: 150px;
-        font-size: 20px;
-        font-weight: 600;
-    }
-    h2 {
-        padding: 20px;
-        background: black;
-        color: white;
-    }
-    .filter {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-    }
-    .body {
-        display: flex;
-        flex-direction: column;
-    }
-</style>
+<div class="search-section">
+    <div class="search">
+        <h2>Выберите подходящий софт для бизнеса</h2>
 
-<div>
-    <h2>Поиск</h2>
-    <input class="input" type="text">
-    <button class="btn" type="button">Найти</button>
+        <div class="search__box">
+            <input class="search__input" type="text" placeholder="Введите поисковой запрос">
+            <button class="search__btn" type="button">Искать</button>
+        </div>
 
-    <div class="items"></div>
+        <div class="items">
+<!--            <div class="item">-->
 
-    <h2>Фильтры</h2>
+<!--            </div>-->
+        </div>
+        <button class="show-more">
+            <span>Показать еще</span>
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.99637 10.9992L7.85097 7.1446C9.2264 5.76913 11.092 4.99649 13.0371 4.9967V4.9967C16.0357 4.99692 18.7322 6.82254 19.846 9.60662L20.003 9.99879"
+                      stroke="#7E97A6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7.99803 10.9991H3.99637V6.99744" stroke="#7E97A6" stroke-width="2.5" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+                <path d="M22.004 15.0009L18.1494 18.8555C16.774 20.2309 14.9084 21.0036 12.9632 21.0034V21.0034C9.96461 21.0031 7.26817 19.1775 6.15438 16.3934L5.99731 16.0013"
+                      stroke="#7E97A6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.0022 15.0009H22.0039V19.0025" stroke="#7E97A6" stroke-width="2.5" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+</div>
 
-    <div class="filter">
-        <div class="left">
-            <form>
-                <button class="btn-reset" type="reset">Сбросить</button>
+<div class="filter">
+    <h2>Подберите продукты под свои цели и задачи</h2>
+    <div class="filter__body">
+        <div class="filter__left">
+            <form class="form">
+                <div class="form__title">
+                    <h3>Фильтр</h3>
+                    <button class="btn-reset" type="reset">Очистить</button>
+                </div>
                 <div class="widget vendors">
-                    <h3 class="title">Вендор</h3>
-                    <div class="body">
+                    <div class="widget__title">
+                        <h4>Вендор</h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
+                                  fill="#7E97A6"/>
+                        </svg>
+                    </div>
+                    <div class="widget__body">
                         <label>
-                            <input data-group="vendor" data-param="apple" id="vendor1" type="checkbox">
-                            <span>apple</span>
+                            <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Vmware"
+                                   id="vendor1"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Vmware</span>
                         </label>
                         <label>
-                            <input data-group="vendor" data-param="google" type="checkbox">
-                            <span>google</span>
+                            <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Citrix"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Citrix</span>
                         </label>
                         <label>
-                            <input data-group="vendor" data-param="facebook" type="checkbox">
-                            <span>facebook</span>
+                            <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Microsoft"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Microsoft</span>
                         </label>
                         <label>
-                            <input data-group="vendor" data-param="amazon" type="checkbox">
-                            <span>amazon</span>
+                            <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Red Hat"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Red Hat</span>
                         </label>
                     </div>
                 </div>
                 <div class="widget products">
-                    <h3 class="title">Продукт</h3>
-                    <div class="body">
+                    <div class="widget__title">
+                        <h4>Продукт</h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
+                                  fill="#7E97A6"/>
+                        </svg>
+                    </div>
+                    <div class="widget__body">
                         <label>
-                            <input data-group="product" data-param="bread" type="checkbox">
-                            <span>Хлеб</span>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware vSphere 7 Essentials Kit for 3 hosts" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware vSphere 7 Essentials Kit for 3 hosts</span>
                         </label>
                         <label>
-                            <input data-group="product" data-param="pie" type="checkbox">
-                            <span>Пирожок</span>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware vSphere 7 Standard for 1 processor" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware vSphere 7 Standard for 1 processor</span>
                         </label>
                         <label>
-                            <input data-group="product" data-param="milk" type="checkbox">
-                            <span>Молоко</span>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware Workstation 16 Pro for Linux and Windows" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware Workstation 16 Pro for Linux and Windows</span>
                         </label>
                         <label>
-                            <input data-group="product" data-param="cake" type="checkbox">
-                            <span>Торт</span>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware vCenter Server 7 Standard for vSphere 7 (Per Instance)"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware vCenter Server 7 Standard for vSphere 7 (Per Instance)</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware vSphere 7 Essentials Plus Kit for 3 hosts (Max 2 processors per host)"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware vSphere 7 Essentials Plus Kit for 3 hosts (Max 2 processors per host)</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware vSphere 7 Enterprise Plus for 1 processor" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware vSphere 7 Enterprise Plus for 1 processor</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware Workstation 16 Player for Linux and Windows" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware Workstation 16 Player for Linux and Windows</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware vSphere 7 Remote Office Branch Office Standard (25 VM pack)"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware vSphere 7 Remote Office Branch Office Standard (25 VM pack)</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware vSphere 7 Standard Acceleration Kit for 6 processors"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware vSphere 7 Standard Acceleration Kit for 6 processors</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="VMware vCenter Server 7 Foundation for vSphere 7" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>VMware vCenter Server 7 Foundation for vSphere 7</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                   data-param="Citrix Virtual Apps / Virtual Apps&Desktops" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Citrix Virtual Apps / Virtual Apps&Desktops</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем" data-param="Citrix Standard Edition"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Citrix Standard Edition</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем" data-param="Citrix Advanced Edition"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Citrix Advanced Edition</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем" data-param="Microsoft Hyper-V" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Microsoft Hyper-V</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем" data-param="Red Hat Virtualization"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Red Hat Virtualization</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем" data-param="Microsoft Teams" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Microsoft Teams</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем" data-param="Microsoft Skype для бизнеса"
+                                   type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Microsoft Skype для бизнеса</span>
+                        </label>
+                        <label>
+                            <input class="hidden-checkbox" data-group="Какой продукт заменяем" data-param="Zoom Meetings" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Zoom Meetings</span>
                         </label>
                     </div>
                 </div>
                 <div class="widget directions">
-                    <h3 class="title">Направления</h3>
-                    <div class="body">
+                    <div class="widget__title">
+                        <h4>Направления</h4>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
+                                  fill="#7E97A6"/>
+                        </svg>
+                    </div>
+                    <div class="widget__body">
                         <label>
-                            <input data-group="direction" data-param="right" type="checkbox">
-                            <span>Вправо</span>
+                            <input class="hidden-checkbox" data-group="Категория" data-param="Виртуализация" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Виртуализация</span>
                         </label>
                         <label>
-                            <input data-group="direction" data-param="left" type="checkbox">
-                            <span>Влево</span>
+                            <input class="hidden-checkbox" data-group="Категория" data-param="ВКС, Коммуникации" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>ВКС, Коммуникации</span>
                         </label>
                         <label>
-                            <input data-group="direction" data-param="forward" type="checkbox">
-                            <span>Вперед</span>
+                            <input class="hidden-checkbox" data-group="Категория" data-param="Операционные системы" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Операционные системы</span>
                         </label>
                         <label>
-                            <input data-group="direction" data-param="back" type="checkbox">
-                            <span>Назад</span>
+                            <input class="hidden-checkbox" data-group="Категория" data-param="Системное ПО и администрирование" type="checkbox">
+                            <div class="checkbox"></div>
+                            <span>Системное ПО и администрирование</span>
                         </label>
                     </div>
                 </div>
             </form>
         </div>
-        <div class="right">
-            <h1>Альтернативные вендоры и продукты взамен ушедших с рынка</h1>
-            <h3 class="list-item apple bread left">Аналог apple, хлеба, влево</h3>
-            <h3 class="list-item google bread right">Аналог google, хлеба, вправо</h3>
-            <h3 class="list-item facebook cake back">Аналог facebook, торта, назад</h3>
-            <h3 class="list-item amazon pie forward">Аналог amazon, пирожка, вперед</h3>
-            <h3 class="list-item amazon milk back">Аналог amazon, молока, назад</h3>
-            <h3 class="list-item apple milk left">Аналог apple, молока, влево</h3>
-            <h3 class="list-item google pie forward">Аналог google, пирожка, вперед</h3>
+        <div class="filter__right">
+            <h3>Альтернативные вендоры и продукты взамен ушедших с рынка</h3>
+            <div class="vendors-list">
+                <div class="vendors-list__item">
+                    <div class="vendors-list__title">
+                        <b>ASTRA LINUX</b>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.0001 14.1549L17.2442 8.91081C17.5696 8.58537 18.0972 8.58537 18.4227 8.91081C18.7481 9.23624 18.7481 9.76388 18.4227 10.0893L12.884 15.628C12.3958 16.1162 11.6044 16.1162 11.1162 15.628L5.57749 10.0893C5.25206 9.76388 5.25206 9.23624 5.57749 8.91081C5.90293 8.58537 6.43057 8.58537 6.756 8.91081L12.0001 14.1549Z"
+                                  fill="#7E97A6"/>
+                        </svg>
+                    </div>
+                    <div class="vendors-list__body">
+                        <ul>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="vendors-list__item">
+                    <div class="vendors-list__title">
+                        <b>ASTRA LINUX</b>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.0001 14.1549L17.2442 8.91081C17.5696 8.58537 18.0972 8.58537 18.4227 8.91081C18.7481 9.23624 18.7481 9.76388 18.4227 10.0893L12.884 15.628C12.3958 16.1162 11.6044 16.1162 11.1162 15.628L5.57749 10.0893C5.25206 9.76388 5.25206 9.23624 5.57749 8.91081C5.90293 8.58537 6.43057 8.58537 6.756 8.91081L12.0001 14.1549Z"
+                                  fill="#7E97A6"/>
+                        </svg>
+                    </div>
+                    <div class="vendors-list__body">
+                        <ul>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                            <li>Vmmanager</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-<!--<script>-->
-<!--    const array = [-->
-<!--        'kaspersky', '1C', 'AliveColors', 'Parther', 'AMS', 'Astra Linux', 'Base', 'Communigate', 'Масштаб', 'item9', 'item10', 'item11', 'item12', 'item13', 'item14', 'item15', 'item16', 'item17', 'item18', 'item19', 'item20', 'item21', 'item22', 'item23', 'item24', 'item25', 'item26', 'item27', 'item28',-->
-<!--    ];-->
-
-<!--    const btn = $('.btn');-->
-
-<!--    let value = new RegExp($('.input').val())-->
-
-<!--    $(array).each(function (i, e) {-->
-
-<!--        if (value.test(e)) {-->
-<!--            $('.items').append('<p class="item">' + e + '</p>')-->
-<!--        }-->
-<!--    })-->
-
-<!--    btn.on('click', function () {-->
-
-<!--        let value = new RegExp($('.input').val())-->
-
-<!--        $('.item').remove()-->
-
-<!--        $(array).each(function (i, e) {-->
-
-<!--            if (value.test(e)) {-->
-<!--                $('.items').append('<p class="item">' + e + '</p>')-->
-<!--            }-->
-<!--        })-->
-<!--    })-->
-
-<!--    /* // Поиск */-->
-
-<!--    /* Фильтр */-->
-
-<!--    let bigString = '';-->
-
-<!--    $('input').on('change', function () {-->
-
-<!--        $('input').each(function (ind, elem) {-->
-<!--            if ($(elem).is(':checked')) {-->
-<!--                bigString += '.' + $(elem).data('param')-->
-<!--            }-->
-<!--        })-->
-
-<!--        $('.list-item').hide()-->
-<!--        $(bigString).show()-->
-
-<!--        bigString = '';-->
-<!--    })-->
-
-<!--    $('.btn-reset').on('click', function () {-->
-<!--        $('.list-item').show()-->
-<!--    })-->
-<!--</script>-->
 
 </body>
 </html>
