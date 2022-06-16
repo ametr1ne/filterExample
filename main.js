@@ -147,8 +147,6 @@ $('input').on('change', function () {
         }
     }
 
-    // console.log('---- finish ----------')
-
     render(newList)
 })
 
@@ -162,8 +160,21 @@ $('.widget__title').on('click', function () {
     $(this).closest($('.widget')).toggleClass('widget--opened');
 })
 
+let showItems = 12;
+
 $('.show-more').on('click', function () {
-    let height = $('.items').outerHeight()
-    $('.items').css('max-height', height + 465 + 'px')
+
+    showItems += 12;
+    $('.item:nth-child(-n+'+ showItems +')').show()
+
+    // вместо 36 будет длина массива
+    if (showItems >= 36) {
+        $('.show-more').hide()
+    }
+
+    // let height = $('.items').outerHeight()
+    // $('.items').css('max-height', height + 465 + 'px')
 })
+
+
 

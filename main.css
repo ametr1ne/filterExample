@@ -91,15 +91,13 @@ h1, h2, h3, h4, a, p {
   color: #7E97A6;
 }
 .search .items {
-  overflow: hidden;
   display: grid;
   flex-wrap: wrap;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 20px;
-  max-height: 465px;
 }
 .search .item {
-  display: flex;
+  display: none;
   box-sizing: border-box;
   cursor: pointer;
   padding: 20px;
@@ -114,6 +112,9 @@ h1, h2, h3, h4, a, p {
   border-radius: 16px;
   transition: border 0.3s;
   flex-direction: column;
+}
+.search .item:nth-child(-n+12) {
+  display: flex;
 }
 .search .item .logo {
   height: 51px;
@@ -154,6 +155,7 @@ h1, h2, h3, h4, a, p {
   font-size: 16px;
   line-height: 28px;
   color: #0F1420;
+  transition: transform 0.3s;
 }
 .search .show-more svg {
   margin-left: 24px;

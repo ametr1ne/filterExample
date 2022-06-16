@@ -33,12 +33,14 @@ h1, h2, h3, h4, a, p {
   padding-bottom: 122px;
 
   h2 {
+    //margin-left: 45px;
     font-size: 46px;
     line-height: 120%;
     margin-bottom: 60px;
   }
 
   &__box {
+    //padding: 0 45px;
     position: relative;
     margin-bottom: 40px;
   }
@@ -93,19 +95,18 @@ h1, h2, h3, h4, a, p {
     color: #7E97A6;
   }
 
-
-
   .items {
-    overflow: hidden;
+    //padding: 0 45px;
+    //overflow: hidden;
     display: grid;
     flex-wrap: wrap;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
-    max-height: 465px;
+    //max-height: 465px;
   }
 
   .item {
-    display: flex;
+    display: none;
     box-sizing: border-box;
     cursor: pointer;
     padding: 20px;
@@ -120,6 +121,10 @@ h1, h2, h3, h4, a, p {
     border-radius: 16px;
     transition: border .3s;
     flex-direction: column;
+
+    &:nth-child(-n+12) {
+      display: flex;
+    }
 
     .logo {
       height: 51px;
@@ -156,6 +161,7 @@ h1, h2, h3, h4, a, p {
     cursor: pointer;
     background: transparent;
     margin-top: 40px;
+    //margin-left: 45px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -168,6 +174,7 @@ h1, h2, h3, h4, a, p {
     font-size: 16px;
     line-height: 28px;
     color: #0F1420;
+    transition: transform .3s;
 
     svg {
       margin-left: 24px;
