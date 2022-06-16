@@ -71,7 +71,7 @@ function render(list) {
             return item['Вендор'] === vendor['Вендор']
         })
 
-        console.log(currentVendor)
+        // console.log(currentVendor)
 
         $('.vendors-list').append('<div class="vendors-list__item">' +
             '<div class="vendors-list__title"> ' +
@@ -94,10 +94,12 @@ function render(list) {
 }
 
 $('input').on('change', function () {
-    let array = []
+
     let finishList = []
 
     $('.widget').each(function () {
+        let array = []
+
         let widgetList = []
 
         let inputs = $(this).find('input:checked')
@@ -108,14 +110,22 @@ $('input').on('change', function () {
 
             widgetList = widgetList.concat(newList)
 
-            array = [...new Set(widgetList)];
+            array = [...new Set(widgetList)]
+
+            // console.log(array)
         })
 
-        let list = array
+        console.log('------------------')
 
-        finishList = filterAnd(array, list)
+        console.log(array)
+
+        if (array.length > 0)
+        finishList = filterAnd(finishList, array)
+        else finishList = array
 
     })
+
+    console.log('---- finish ----------')
 
     console.log(finishList)
 
