@@ -13,544 +13,217 @@
 </head>
 <body>
 
-<style>
-    body ::-webkit-scrollbar-thumb {
-        background: rgba(126, 151, 166, 0.5);
-        border-radius: 8px;
-    }
-    body ::-webkit-scrollbar {
-        width: 4px;
-        height: 5px;
-        background: rgba(0, 0, 0, 0);
-    }
-
-    h1, h2, h3, h4, a, p {
-        margin: 0;
-        padding: 0;
-    }
-
-    .search-section {
-        background: #F0F5F7;
-        padding-bottom: 50px;
-    }
-
-    .search {
-        width: 1540px;
-        margin: 0 auto;
-        padding-top: 100px;
-        padding-bottom: 122px;
-    }
-    .search h2 {
-        font-size: 46px;
-        line-height: 120%;
-        margin-bottom: 60px;
-    }
-    .search__box {
-        position: relative;
-        margin-bottom: 40px;
-    }
-    .search ::-webkit-input-placeholder {
-        /* WebKit browsers */
-        color: #7E97A6;
-    }
-    .search :-moz-placeholder {
-        /* Mozilla Firefox 4 to 18 */
-        color: #7E97A6;
-    }
-    .search ::-moz-placeholder {
-        /* Mozilla Firefox 19+ */
-        color: #7E97A6;
-    }
-    .search :-ms-input-placeholder {
-        /* Internet Explorer 10+ */
-        color: #7E97A6;
-    }
-    .search__input {
-        background: transparent;
-        outline: none;
-        box-sizing: border-box;
-        height: 64px;
-        border: 2px solid rgba(126, 151, 166, 0.3);
-        border-radius: 16px;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 140%;
-        color: #7E97A6;
-        width: 100%;
-        padding: 0 20px;
-        transition: border 0.3s, color 0.3s;
-    }
-    .search__input:focus {
-        border: 2px solid rgba(126, 151, 166, 0.8);
-        color: black;
-    }
-    .search__btn {
-        font-family: inherit;
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        border: none;
-        background: transparent;
-        right: 33px;
-        transform: translateY(-50%);
-        font-weight: 800;
-        font-size: 16px;
-        line-height: 28px;
-        color: #7E97A6;
-    }
-    .search .items {
-        display: grid;
-        flex-wrap: wrap;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 20px;
-    }
-    .search .item {
-        display: none;
-        box-sizing: border-box;
-        cursor: pointer;
-        padding: 20px;
-        height: 135px;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-        color: #0F1420;
-        border: 2px solid #FFFFFF;
-        background: #FFFFFF;
-        box-shadow: 0 10px 44px rgba(161, 181, 191, 0.2);
-        border-radius: 16px;
-        transition: border 0.3s;
-        flex-direction: column;
-    }
-    .search .item:nth-child(-n+12) {
-        display: flex;
-    }
-    .search .item .logo {
-        height: 51px;
-        width: 100%;
-        display: flex;
-    }
-    .search .item .logo img {
-        object-fit: contain;
-    }
-    .search .item .logo svg {
-        visibility: hidden;
-        opacity: 0;
-        margin-left: auto;
-    }
-    .search .item p {
-        margin-top: auto;
-    }
-    .search .item:hover {
-        border: 2px solid #7E97A6;
-    }
-    .search .item:hover .logo svg {
-        visibility: visible;
-        opacity: 1;
-    }
-    .search .show-more {
-        cursor: pointer;
-        background: transparent;
-        margin-top: 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 16px 32px;
-        height: 60px;
-        border: 2px solid #7E97A6;
-        border-radius: 16px;
-        font-weight: 800;
-        font-size: 16px;
-        line-height: 28px;
-        color: #0F1420;
-        transition: transform 0.3s;
-    }
-    .search .show-more svg {
-        margin-left: 24px;
-    }
-
-    .filter {
-        padding-top: 100px;
-        padding-bottom: 121px;
-        width: 1540px;
-        margin: 0 auto;
-    }
-    .filter h2 {
-        font-size: 46px;
-        line-height: 120%;
-        margin-bottom: 40px;
-    }
-    .filter h3 {
-        font-size: 20px;
-        line-height: 28px;
-        color: #0F1420;
-    }
-    .filter__body {
-        display: grid;
-        grid-template-columns: 260px 1fr;
-        grid-column-gap: 40px;
-    }
-    .filter .form__title {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 16px;
-    }
-    .filter .form__title .btn-reset {
-        font-family: inherit;
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        font-size: 12px;
-        line-height: 18px;
-        color: #7E97A6;
-    }
-    .filter .widget {
-        overflow: hidden;
-    }
-    .filter .widget ~ .widget {
-        margin-top: 16px;
-    }
-    .filter .widget__title {
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 16px;
-        line-height: 24px;
-        color: #0F1420;
-    }
-    .filter .widget__body {
-        margin-top: 12px;
-        display: none;
-        flex-direction: column;
-        max-height: 162px;
-        overflow: auto;
-        padding-right: 20px;
-    }
-    .filter .widget__body label {
-        display: flex;
-        align-items: center;
-    }
-    .filter .widget__body label span {
-        margin-left: 8px;
-        font-weight: 600;
-        font-size: 12px;
-        line-height: 16px;
-        color: #0F1420;
-    }
-    .filter .widget__body label ~ label {
-        margin-top: 12px;
-    }
-    .filter .widget__body .checkbox {
-        width: 16px;
-        height: 16px;
-        min-width: 16px;
-        background: #F0F5F7;
-        border: 2px solid rgba(126, 151, 166, 0.3);
-        border-radius: 4px;
-    }
-    .filter .widget__body .hidden-checkbox:checked ~ .checkbox {
-        background: #C70D45;
-    }
-    .filter .widget__body .hidden-checkbox:checked ~ .checkbox:before {
-        content: "";
-        background: url("mark.svg") no-repeat center;
-        display: block;
-        width: 16px;
-        height: 16px;
-    }
-    .filter .widget__body .hidden-checkbox {
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-    }
-    .filter .widget--opened .widget__title svg {
-        transform: rotate(180deg);
-    }
-    .filter .widget--opened .widget__body {
-        display: flex;
-    }
-    .filter__right {
-        background: #F0F5F7;
-        border: 1px solid #F0F5F7;
-        border-radius: 16px;
-        min-height: 640px;
-        max-height: 640px;
-        padding: 24px;
-        overflow-y: auto;
-    }
-    .filter__right h3 {
-        margin-bottom: 24px;
-    }
-    .filter .vendors-list {
-        display: flex;
-        flex-direction: column;
-    }
-    .filter .vendors-list__item {
-        background: #FFFFFF;
-        box-shadow: 0 10px 44px rgba(161, 181, 191, 0.2);
-        border-radius: 16px;
-        padding: 12px 24px;
-        border: 2px solid #FFFFFF;
-    }
-    .filter .vendors-list__item:not(:last-child) {
-        margin-bottom: 8px;
-    }
-    .filter .vendors-list__item b {
-        font-weight: 800;
-        font-size: 16px;
-        line-height: 28px;
-        color: #0F1420;
-    }
-    .filter .vendors-list__item ul {
-        text-decoration: none;
-        list-style: none;
-        margin: 10px 0 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .filter .vendors-list__item ul li {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 20px;
-        color: #7E97A6;
-    }
-    .filter .vendors-list__item ul li ~ li {
-        margin-top: 16px;
-    }
-    .filter .vendors-list__item:hover {
-        border: 2px solid #7E97A6;
-    }
-    .filter .vendors-list__body {
-        display: none;
-    }
-    .filter .vendors-list .vendors-list__item--opened .vendors-list__title svg {
-        transform: rotate(180deg);
-    }
-    .filter .vendors-list .vendors-list__item--opened .vendors-list__body {
-        display: block;
-    }
-    .filter .vendors-list__title {
-        display: flex;
-        cursor: pointer;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    /*# sourceMappingURL=main.css.map */
-
-</style>
-
-<div class="filter">
+<div class="wrapper filter">
     <h2>Подберите продукты под свои цели и задачи</h2>
     <div class="filter__body">
         <div class="filter__left">
+            <button class="btn show-filter-btn">Показать фильтр</button>
             <form class="form">
                 <div class="form__title">
                     <h3>Фильтр</h3>
                     <button class="btn-reset" type="reset">Очистить</button>
                 </div>
-                <div class="widget vendors">
-                    <div class="widget__title">
-                        <h4>Вендор</h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
-                                  fill="#7E97A6"/>
-                        </svg>
+                <div class="widget-box">
+                    <div class="widget vendors">
+                        <div class="widget__title">
+                            <h4>Вендор</h4>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
+                                      fill="#7E97A6"/>
+                            </svg>
+                        </div>
+                        <div class="widget__body">
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Vmware"
+                                       id="vendor1"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Vmware</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Citrix"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Citrix</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Microsoft"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Microsoft</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Red Hat"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Red Hat</span>
+                            </label>
+                        </div>
                     </div>
-                    <div class="widget__body">
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Vmware"
-                                   id="vendor1"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Vmware</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Citrix"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Citrix</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Microsoft"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Microsoft</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Red Hat"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Red Hat</span>
-                        </label>
+                    <div class="widget products">
+                        <div class="widget__title">
+                            <h4>Продукт</h4>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
+                                      fill="#7E97A6"/>
+                            </svg>
+                        </div>
+                        <div class="widget__body">
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware vSphere 7 Essentials Kit for 3 hosts" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware vSphere 7 Essentials Kit for 3 hosts</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware vSphere 7 Standard for 1 processor" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware vSphere 7 Standard for 1 processor</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware Workstation 16 Pro for Linux and Windows" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware Workstation 16 Pro for Linux and Windows</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware vCenter Server 7 Standard for vSphere 7 (Per Instance)"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware vCenter Server 7 Standard for vSphere 7 (Per Instance)</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware vSphere 7 Essentials Plus Kit for 3 hosts (Max 2 processors per host)"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware vSphere 7 Essentials Plus Kit for 3 hosts (Max 2 processors per host)</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware vSphere 7 Enterprise Plus for 1 processor" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware vSphere 7 Enterprise Plus for 1 processor</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware Workstation 16 Player for Linux and Windows" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware Workstation 16 Player for Linux and Windows</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware vSphere 7 Remote Office Branch Office Standard (25 VM pack)"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware vSphere 7 Remote Office Branch Office Standard (25 VM pack)</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware vSphere 7 Standard Acceleration Kit for 6 processors"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware vSphere 7 Standard Acceleration Kit for 6 processors</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="VMware vCenter Server 7 Foundation for vSphere 7" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>VMware vCenter Server 7 Foundation for vSphere 7</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="Citrix Virtual Apps / Virtual Apps&Desktops" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Citrix Virtual Apps / Virtual Apps&Desktops</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="Citrix Standard Edition"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Citrix Standard Edition</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="Citrix Advanced Edition"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Citrix Advanced Edition</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="Microsoft Hyper-V" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Microsoft Hyper-V</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="Red Hat Virtualization"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Red Hat Virtualization</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="Microsoft Teams" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Microsoft Teams</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="Microsoft Skype для бизнеса"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Microsoft Skype для бизнеса</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"
+                                       data-param="Zoom Meetings" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Zoom Meetings</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="widget directions">
+                        <div class="widget__title">
+                            <h4>Направления</h4>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
+                                      fill="#7E97A6"/>
+                            </svg>
+                        </div>
+                        <div class="widget__body">
+                            <label>
+                                <input class="hidden-checkbox" data-group="Категория" data-param="Виртуализация"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Виртуализация</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Категория" data-param="ВКС, Коммуникации"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>ВКС, Коммуникации</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Категория" data-param="Операционные системы"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Операционные системы</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Категория"
+                                       data-param="Системное ПО и администрирование" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Системное ПО и администрирование</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="widget products">
-                    <div class="widget__title">
-                        <h4>Продукт</h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
-                                  fill="#7E97A6"/>
-                        </svg>
-                    </div>
-                    <div class="widget__body">
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware vSphere 7 Essentials Kit for 3 hosts" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware vSphere 7 Essentials Kit for 3 hosts</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware vSphere 7 Standard for 1 processor" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware vSphere 7 Standard for 1 processor</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware Workstation 16 Pro for Linux and Windows" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware Workstation 16 Pro for Linux and Windows</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware vCenter Server 7 Standard for vSphere 7 (Per Instance)"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware vCenter Server 7 Standard for vSphere 7 (Per Instance)</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware vSphere 7 Essentials Plus Kit for 3 hosts (Max 2 processors per host)"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware vSphere 7 Essentials Plus Kit for 3 hosts (Max 2 processors per host)</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware vSphere 7 Enterprise Plus for 1 processor" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware vSphere 7 Enterprise Plus for 1 processor</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware Workstation 16 Player for Linux and Windows" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware Workstation 16 Player for Linux and Windows</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware vSphere 7 Remote Office Branch Office Standard (25 VM pack)"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware vSphere 7 Remote Office Branch Office Standard (25 VM pack)</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware vSphere 7 Standard Acceleration Kit for 6 processors"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware vSphere 7 Standard Acceleration Kit for 6 processors</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="VMware vCenter Server 7 Foundation for vSphere 7" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>VMware vCenter Server 7 Foundation for vSphere 7</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="Citrix Virtual Apps / Virtual Apps&Desktops" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Citrix Virtual Apps / Virtual Apps&Desktops</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="Citrix Standard Edition"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Citrix Standard Edition</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="Citrix Advanced Edition"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Citrix Advanced Edition</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="Microsoft Hyper-V" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Microsoft Hyper-V</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="Red Hat Virtualization"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Red Hat Virtualization</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="Microsoft Teams" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Microsoft Teams</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="Microsoft Skype для бизнеса"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Microsoft Skype для бизнеса</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Какой продукт заменяем"
-                                   data-param="Zoom Meetings" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Zoom Meetings</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="widget directions">
-                    <div class="widget__title">
-                        <h4>Направления</h4>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
-                                  fill="#7E97A6"/>
-                        </svg>
-                    </div>
-                    <div class="widget__body">
-                        <label>
-                            <input class="hidden-checkbox" data-group="Категория" data-param="Виртуализация"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Виртуализация</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Категория" data-param="ВКС, Коммуникации"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>ВКС, Коммуникации</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Категория" data-param="Операционные системы"
-                                   type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Операционные системы</span>
-                        </label>
-                        <label>
-                            <input class="hidden-checkbox" data-group="Категория"
-                                   data-param="Системное ПО и администрирование" type="checkbox">
-                            <div class="checkbox"></div>
-                            <span>Системное ПО и администрирование</span>
-                        </label>
-                    </div>
-                </div>
+                <button class="btn hide-filter-btn">Скрыть фильтр</button>
             </form>
         </div>
         <div class="filter__right">
@@ -561,213 +234,6 @@
         </div>
     </div>
 </div>
-
-<div class="search-section">
-    <div class="search">
-        <h2>Выберите подходящий софт для бизнеса</h2>
-
-        <div class="search__box">
-            <input class="search__input" type="text" placeholder="Введите поисковой запрос">
-            <button class="search__btn" type="button">Искать</button>
-        </div>
-
-        <div class="items"></div>
-
-        <button class="show-more">
-            <span>Показать еще</span>
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.99637 10.9992L7.85097 7.1446C9.2264 5.76913 11.092 4.99649 13.0371 4.9967V4.9967C16.0357 4.99692 18.7322 6.82254 19.846 9.60662L20.003 9.99879"
-                      stroke="#7E97A6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7.99803 10.9991H3.99637V6.99744" stroke="#7E97A6" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-                <path d="M22.004 15.0009L18.1494 18.8555C16.774 20.2309 14.9084 21.0036 12.9632 21.0034V21.0034C9.96461 21.0031 7.26817 19.1775 6.15438 16.3934L5.99731 16.0013"
-                      stroke="#7E97A6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M18.0022 15.0009H22.0039V19.0025" stroke="#7E97A6" stroke-width="2.5" stroke-linecap="round"
-                      stroke-linejoin="round"/>
-            </svg>
-        </button>
-    </div>
-</div>
-
-<script>
-    /* Поиск */
-
-    const array = [
-        'kaspersky', '1C', 'AliveColors', 'Parther', 'AMS', 'Astra Linux', 'Base', 'Communigate', 'Масштаб', 'item9', 'item10', 'item11', 'item12', 'item13', 'item14', 'item15', 'item16', 'item17', 'item18', 'item19', 'item20', 'item21', 'item22', 'item23', 'item24', 'item25', 'item26', 'item27', 'item28',
-    ];
-
-    const btn = $('.search__btn');
-
-    let value = new RegExp($('.search___input').val())
-
-    $(array).each(function (i, e) {
-
-        if (value.test(e)) {
-            $('.items').append('<div class="item"><div class="logo"><img src="kas.png" alt="logo">' +
-                '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-                '<path d="M14 9.50268C14.5523 9.50268 15 9.9504 15 10.5027V13.5027C15 14.3311 14.3284 15.0027 13.5 15.0027H2.5C1.67157 15.0027 1 14.3311 1 13.5027V2.50268C1 1.67425 1.67157 1.00268 2.5 1.00268H5.5C6.05228 1.00268 6.5 1.45039 6.5 2.00268C6.5 2.55496 6.05228 3.00268 5.5 3.00268H3V13.0027H13V10.5027C13 9.9504 13.4477 9.50268 14 9.50268ZM12.3 2.78682V2.46345L11.1503 2.77775C10.6125 2.92477 10.0575 2.99926 9.5 2.99926C8.9 2.99926 8.5 2.55155 8.5 1.99817C8.5 1.44588 8.94772 0.998169 9.5 0.998169H14C14.5523 0.998169 15 1.44588 15 1.99817V6.50268C15 7.05496 14.5523 7.50268 14 7.50268C13.4477 7.50268 13 7.09994 13 6.50268C13 5.94336 13.0747 5.38654 13.222 4.84698L13.5353 3.69994H13.2144L12.1366 5.13683C11.8524 5.51581 11.5415 5.87411 11.2065 6.20903L7.70697 9.70719C7.31637 10.0976 6.6832 10.0975 6.29276 9.70691C5.90231 9.31631 5.90243 8.68315 6.29303 8.2927L9.79386 4.79324C10.1265 4.46076 10.4821 4.15217 10.8581 3.86975L12.3 2.78682Z" fill="#7E97A6"/>\n' +
-                '</svg>' +
-                '</div><p>' + e + '</p></div>')
-        }
-    })
-
-    btn.on('click', function () {
-
-        let value = new RegExp($('.search__input').val())
-
-        $('.item').remove()
-
-        $(array).each(function (i, e) {
-
-            if (value.test(e)) {
-                $('.items').append('<div class="item">' + e + '</div>')
-            }
-        })
-    })
-
-    /* // Поиск */
-
-    /* Фильтр */
-
-    const myData = data.slice(0, 79);
-
-    const copy = [...myData]
-
-    render(copy)
-
-    function filterOr(oldList, item) {
-
-        return oldList.filter(function (value) {
-            let group = $(item).data('group')
-            let param = $(item).data('param')
-
-            if (value[group].includes(param)) {
-                return value;
-            }
-        });
-    }
-
-    function filterAnd(list1, list2) {
-
-        return list1.filter(function (item) {
-            return list2.includes(item)
-        });
-    }
-
-    function render(list) {
-        $('.vendors-list__item').remove()
-
-        let vendorsList = []
-
-        list.forEach(function (item) {
-            if (vendorsList[item['Вендор']] === undefined)
-                vendorsList[item['Вендор']] = []
-            vendorsList[item['Вендор']].push(item['Продукт'])
-        })
-
-        for(const [key, value] of Object.entries(vendorsList)) {
-            let elem = ''
-
-            value.forEach(function(item) {
-                elem += "<li><a>"+item+"</a></li>"
-            })
-
-            $('.vendors-list').append('<div class="vendors-list__item">' +
-                '<div class="vendors-list__title"> ' +
-                '<b>' + key + '</b> ' +
-                '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> ' +
-                '<path d="M12.0001 14.1549L17.2442 8.91081C17.5696 8.58537 18.0972 8.58537 18.4227 8.91081C18.7481 9.23624 18.7481 9.76388 18.4227 10.0893L12.884 15.628C12.3958 16.1162 11.6044 16.1162 11.1162 15.628L5.57749 10.0893C5.25206 9.76388 5.25206 9.23624 5.57749 8.91081C5.90293 8.58537 6.43057 8.58537 6.756 8.91081L12.0001 14.1549Z" fill="#7E97A6"/> ' +
-                '</svg> ' +
-                '</div> ' +
-                '<div class="vendors-list__body"> ' +
-                '<ul class="products-list">' +
-                elem +
-                '</ul> ' +
-                '</div> ' +
-                '</div>')
-        }
-
-        $('.vendors-list__title').on('click', function () {
-            $(this).closest('.vendors-list__item').toggleClass('vendors-list__item--opened')
-        })
-    }
-
-    $('input').on('change', function () {
-
-        let checkedInputCount = 0;
-
-        let filteredList = []
-
-        $('.widget').each(function () {
-
-            let widgetList = []
-
-            let inputs = $(this).find('input:checked')
-
-            inputs.each(function (i, item) {
-
-                checkedInputCount += 1;
-
-                let newList = filterOr(copy, item)
-
-                widgetList = widgetList.concat(newList)
-
-                widgetList = [...new Set(widgetList)]
-            })
-
-            if (widgetList.length > 0)
-                filteredList.push(widgetList)
-        })
-
-        let newList = []
-
-        if (filteredList.length > 1) {
-            filteredList.forEach(function (value, index) {
-                if (index > 0) {
-                    filteredList[index - 1] = filterAnd(filteredList[index - 1], value)
-                }
-
-                if (filteredList.length - 1 === index) {
-                    newList = filteredList[index - 1]
-                }
-            })
-        } else {
-            if (checkedInputCount === 0) {
-                newList = copy
-            } else {
-                newList = filteredList[0]
-            }
-        }
-
-        render(newList)
-    })
-
-    $('.btn-reset').on('click', function () {
-        render(copy)
-    })
-
-    /* // Фильтр */
-
-    $('.widget__title').on('click', function () {
-        $(this).closest($('.widget')).toggleClass('widget--opened');
-    })
-
-    let showItems = 12;
-
-    $('.show-more').on('click', function () {
-
-        showItems += 12;
-        $('.item:nth-child(-n+'+ showItems +')').show()
-
-        // вместо 36 будет длина массива
-        if (showItems >= 36) {
-            $('.show-more').hide()
-        }
-
-        // let height = $('.items').outerHeight()
-        // $('.items').css('max-height', height + 465 + 'px')
-    })
-</script>
 
 </body>
 </html>
