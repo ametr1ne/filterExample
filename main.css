@@ -66,6 +66,7 @@ h1, h2, h3, h4, a, p {
   justify-content: center;
   align-items: center;
   padding: 0 40px;
+  font-size: 16px;
   gap: 10px;
   height: 52px;
   background: #FFFFFF;
@@ -114,7 +115,7 @@ h1, h2, h3, h4, a, p {
 .filter .widget__body {
   display: none;
   flex-direction: column;
-  max-height: 224px;
+  max-height: 256px;
   overflow: auto;
 }
 .filter .widget__body label {
@@ -310,6 +311,33 @@ h1, h2, h3, h4, a, p {
     margin-bottom: 16px;
     border-right: none;
     border-bottom: 1px solid rgba(126, 151, 166, 0.5);
+  }
+  .filter .form .widget-box .widget__body {
+    max-height: 148px;
+  }
+}
+@media (max-width: 543px) {
+  .filter__body .form .widget-box .widget__body {
+    max-height: 157px;
+  }
+}
+@media (max-width: 460px) {
+  .filter__body .form .widget-box .widget__body {
+    max-height: 175px;
+  }
+}
+@media (max-width: 480px) {
+  .wrapper h2 {
+    font-size: 24px;
+  }
+
+  .filter .btn {
+    width: 100%;
+  }
+}
+@media (max-width: 390px) {
+  .filter__body .form .widget-box .widget__body {
+    max-height: 190px;
   }
 }
 

@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   font-family: "Roboto Light", sans-serif;
 
+
   ::-webkit-scrollbar-thumb {
     background: rgba(126, 151, 166, 0.5);
     border-radius: 8px;
@@ -74,6 +75,7 @@ h1, h2, h3, h4, a, p {
     justify-content: center;
     align-items: center;
     padding: 0 40px;
+    font-size: 16px;
     gap: 10px;
 
     height: 52px;
@@ -131,7 +133,7 @@ h1, h2, h3, h4, a, p {
     &__body {
       display: none;
       flex-direction: column;
-      max-height: 224px;
+      max-height: 256px;
       overflow: auto;
 
       label {
@@ -372,6 +374,71 @@ h1, h2, h3, h4, a, p {
             margin-bottom: 16px;
             border-right: none;
             border-bottom: 1px solid rgba(126, 151, 166, 0.5);
+          }
+
+          &__body {
+            max-height: 148px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 543px) {
+  .filter {
+    &__body {
+      .form {
+        .widget-box {
+          .widget {
+            &__body {
+              max-height: 157px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .filter {
+    &__body {
+      .form {
+        .widget-box {
+          .widget {
+            &__body {
+              max-height: 175px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    h2 {
+      font-size: 24px;
+    }
+  }
+  .filter {
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  .filter {
+    &__body {
+      .form {
+        .widget-box {
+          .widget {
+            &__body {
+              max-height: 190px;
+            }
           }
         }
       }

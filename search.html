@@ -7,12 +7,279 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="search.css">
     <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script defer src="object.js"></script>
     <script defer src="search.js"></script>
     <title>Search</title>
 </head>
 <body>
-<div class="search-section">
+<style>
+    #allrecords ul {
+        padding: 0;
+        margin: 0;
+    }
+    #allrecords a {
+        color: inherit;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "ProximaNova", sans-serif;
+    }
+
+    h1, h2, h3, h4, a, p {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+        font-family: "Roboto Light", sans-serif;
+    }
+
+    .wrapper {
+        background: #F0F5F7;
+        padding: 100px 0;
+    }
+    .wrapper h2 {
+        font-size: 46px;
+        line-height: 120%;
+        margin-bottom: 40px;
+    }
+    .wrapper h3 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        color: #0F1420;
+    }
+
+    .search {
+        width: 1160px;
+        margin: 0 auto;
+    }
+    .search h2 {
+        font-size: 46px;
+        line-height: 120%;
+        margin-bottom: 60px;
+    }
+    .search__box {
+        position: relative;
+        margin-bottom: 40px;
+    }
+    .search ::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: #7E97A6;
+    }
+    .search :-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #7E97A6;
+    }
+    .search ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #7E97A6;
+    }
+    .search :-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: #7E97A6;
+    }
+    .search__input {
+        background: transparent;
+        outline: none;
+        box-sizing: border-box;
+        height: 64px;
+        border: 2px solid rgba(126, 151, 166, 0.3);
+        border-radius: 16px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 140%;
+        color: #7E97A6;
+        width: 100%;
+        padding: 0 20px;
+        transition: border 0.3s, color 0.3s;
+    }
+    .search__input:focus {
+        border: 2px solid rgba(126, 151, 166, 0.8);
+        color: black;
+    }
+    .search__btn {
+        font-family: inherit;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        border: none;
+        background: transparent;
+        right: 33px;
+        transform: translateY(-50%);
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 28px;
+        color: #7E97A6;
+    }
+    .search .items {
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+    .search .item {
+        display: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        padding: 20px;
+        height: 135px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #0F1420;
+        border: 2px solid #FFFFFF;
+        background: #FFFFFF;
+        box-shadow: 0 10px 44px rgba(161, 181, 191, 0.2);
+        border-radius: 16px;
+        transition: border 0.3s;
+        flex-direction: column;
+    }
+    .search .item:nth-child(-n+12) {
+        display: flex;
+    }
+    .search .item .logo {
+        width: 100%;
+        display: flex;
+    }
+    .search .item .logo img {
+        max-height: 51px;
+        object-fit: contain;
+        width: 90%;
+    }
+    .search .item .logo svg {
+        visibility: hidden;
+        opacity: 0;
+        margin-left: auto;
+    }
+    .search .item p {
+        margin-top: auto;
+    }
+    .search .item:hover {
+        border: 2px solid #7E97A6;
+    }
+    .search .item:hover .logo svg {
+        visibility: visible;
+        opacity: 1;
+    }
+    .search .show-more {
+        cursor: pointer;
+        background: transparent;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 32px;
+        height: 60px;
+        border: 2px solid #7E97A6;
+        border-radius: 16px;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 28px;
+        color: #0F1420;
+        transition: transform 0.3s;
+    }
+    .search .show-more svg {
+        margin-left: 24px;
+    }
+
+    @media (max-width: 1190px) {
+        .wrapper {
+            padding: 60px 0;
+        }
+
+        .search {
+            width: 940px;
+        }
+        .search h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+        .search .show-more {
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 52px;
+        }
+        .search__box {
+            margin-bottom: 32px;
+        }
+    }
+    @media (max-width: 960px) {
+        .search {
+            width: 100%;
+            padding: 0 40px;
+        }
+    }
+    @media (max-width: 767px) {
+        .search {
+            padding: 0 10px;
+        }
+        .search h2 {
+            font-size: 32px;
+            line-height: 125%;
+        }
+        .search .items {
+            grid-template-columns: 1fr 1fr;
+        }
+        .search .items .item {
+            display: none;
+        }
+        .search .items .item .logo img {
+            width: 80%;
+        }
+        .search .items .item:nth-child(-n+6) {
+            display: flex;
+        }
+    }
+    @media (max-width: 480px) {
+        .wrapper {
+            padding: 40px 0;
+        }
+
+        .search h2 {
+            margin-bottom: 32px;
+            font-size: 24px;
+            line-height: 32px;
+        }
+        .search__box {
+            margin-bottom: 24px;
+        }
+        .search__input {
+            padding-right: 110px;
+        }
+        .search .items .item {
+            height: 91px;
+        }
+        .search .items .item .logo {
+            height: 100%;
+        }
+        .search .items .item .logo img {
+            width: 100%;
+            height: 100%;
+        }
+        .search .items .item p, .search .items .item svg {
+            display: none;
+        }
+        .search .show-more {
+            width: 100%;
+        }
+    }
+
+    /*# sourceMappingURL=search.css.map */
+
+</style>
+<div class="wrapper">
     <div class="search">
         <h2>Выберите подходящий софт для бизнеса</h2>
 
@@ -38,5 +305,60 @@
         </button>
     </div>
 </div>
+<script>
+    /* Поиск */
+
+    const array = [
+        'kaspersky', '1C', 'AliveColors', 'Parther', 'AMS', 'Astra Linux', 'Base', 'Communigate', 'Масштаб', 'item9', 'item10', 'item11', 'item12', 'item13', 'item14', 'item15', 'item16', 'item17', 'item18', 'item19', 'item20', 'item21', 'item22', 'item23', 'item24', 'item25', 'item26', 'item27', 'item28',
+    ];
+
+    function renderLogos() {
+        let value = new RegExp($('.search__input').val())
+
+        $(array).each(function (i, e) {
+
+            if (value.test(e)) {
+                $('.items').append('<div class="item"><div class="logo"><img src="kas.png" alt="logo">' +
+                    '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+                    '<path d="M14 9.50268C14.5523 9.50268 15 9.9504 15 10.5027V13.5027C15 14.3311 14.3284 15.0027 13.5 15.0027H2.5C1.67157 15.0027 1 14.3311 1 13.5027V2.50268C1 1.67425 1.67157 1.00268 2.5 1.00268H5.5C6.05228 1.00268 6.5 1.45039 6.5 2.00268C6.5 2.55496 6.05228 3.00268 5.5 3.00268H3V13.0027H13V10.5027C13 9.9504 13.4477 9.50268 14 9.50268ZM12.3 2.78682V2.46345L11.1503 2.77775C10.6125 2.92477 10.0575 2.99926 9.5 2.99926C8.9 2.99926 8.5 2.55155 8.5 1.99817C8.5 1.44588 8.94772 0.998169 9.5 0.998169H14C14.5523 0.998169 15 1.44588 15 1.99817V6.50268C15 7.05496 14.5523 7.50268 14 7.50268C13.4477 7.50268 13 7.09994 13 6.50268C13 5.94336 13.0747 5.38654 13.222 4.84698L13.5353 3.69994H13.2144L12.1366 5.13683C11.8524 5.51581 11.5415 5.87411 11.2065 6.20903L7.70697 9.70719C7.31637 10.0976 6.6832 10.0975 6.29276 9.70691C5.90231 9.31631 5.90243 8.68315 6.29303 8.2927L9.79386 4.79324C10.1265 4.46076 10.4821 4.15217 10.8581 3.86975L12.3 2.78682Z" fill="#7E97A6"/>\n' +
+                    '</svg>' +
+                    '</div><p>' + e + '</p></div>')
+            }
+        })
+    }
+
+    const btn = $('.search__btn');
+
+    renderLogos()
+
+    btn.on('click', function () {
+        $('.item').remove()
+        renderLogos()
+    })
+
+    let showItems
+
+    if (window.matchMedia('(max-width: 767px').matches) {
+        showItems = 6;
+    } else showItems = 12;
+
+    $('.show-more').on('click', function () {
+
+        if (window.matchMedia('(max-width: 767px').matches) {
+            showItems += 6;
+        } else showItems += 12;
+
+        $('.item:nth-child(-n+'+ showItems +')').css('display', 'flex')
+
+        if (showItems >= $('.item').length) {
+            $('.show-more').hide()
+        }
+
+        // let height = $('.items').outerHeight()
+        // $('.items').css('max-height', height + 465 + 'px')
+    })
+
+    /* // Поиск */
+</script>
 </body>
 </html>
