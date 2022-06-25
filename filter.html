@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="filterNew.css">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="filter_object.js"></script>
+    <script defer src="filter.js"></script>
+    <title>Filter</title>
+</head>
+<body>
+
+<div class="wrapper filter">
+    <h2>Подберите продукты под свои цели и задачи</h2>
+    <div class="filter__body">
+        <div class="filter__left">
+            <button class="btn show-filter-btn">Показать фильтр</button>
+            <form class="form">
+                <div class="form__title">
+                    <h3>Фильтр</h3>
+                    <button class="btn-reset" type="reset">Очистить</button>
+                </div>
+                <div class="widget-box">
+                    <div class="widget vendors">
+                        <div class="widget__title">
+                            <h4>Вендор</h4>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
+                                      fill="#7E97A6"/>
+                            </svg>
+                        </div>
+                        <div class="widget__body">
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Vmware"
+                                       id="vendor1"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Vmware</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Citrix"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Citrix</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Microsoft"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Microsoft</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Какого вендора заменяет" data-param="Red Hat"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Red Hat</span>
+                            </label>
+                        </div>
+                    </div>
+<!--                    <div class="widget products">-->
+<!--                        <div class="widget__title">-->
+<!--                            <h4>Продукт</h4>-->
+<!--                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"-->
+<!--                                      fill="#7E97A6"/>-->
+<!--                            </svg>-->
+<!--                        </div>-->
+<!--                        <div class="widget__body">-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware vSphere 7 Essentials Kit for 3 hosts" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware vSphere 7 Essentials Kit for 3 hosts</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware vSphere 7 Standard for 1 processor" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware vSphere 7 Standard for 1 processor</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware Workstation 16 Pro for Linux and Windows" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware Workstation 16 Pro for Linux and Windows</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware vCenter Server 7 Standard for vSphere 7 (Per Instance)"-->
+<!--                                       type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware vCenter Server 7 Standard for vSphere 7 (Per Instance)</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware vSphere 7 Essentials Plus Kit for 3 hosts (Max 2 processors per host)"-->
+<!--                                       type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware vSphere 7 Essentials Plus Kit for 3 hosts (Max 2 processors per host)</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware vSphere 7 Enterprise Plus for 1 processor" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware vSphere 7 Enterprise Plus for 1 processor</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware Workstation 16 Player for Linux and Windows" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware Workstation 16 Player for Linux and Windows</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware vSphere 7 Remote Office Branch Office Standard (25 VM pack)"-->
+<!--                                       type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware vSphere 7 Remote Office Branch Office Standard (25 VM pack)</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware vSphere 7 Standard Acceleration Kit for 6 processors"-->
+<!--                                       type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware vSphere 7 Standard Acceleration Kit for 6 processors</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="VMware vCenter Server 7 Foundation for vSphere 7" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>VMware vCenter Server 7 Foundation for vSphere 7</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="Citrix Virtual Apps / Virtual Apps&Desktops" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>Citrix Virtual Apps / Virtual Apps&Desktops</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="Citrix Standard Edition"-->
+<!--                                       type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>Citrix Standard Edition</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="Citrix Advanced Edition"-->
+<!--                                       type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>Citrix Advanced Edition</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="Microsoft Hyper-V" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>Microsoft Hyper-V</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="Red Hat Virtualization"-->
+<!--                                       type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>Red Hat Virtualization</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="Microsoft Teams" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>Microsoft Teams</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="Microsoft Skype для бизнеса"-->
+<!--                                       type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>Microsoft Skype для бизнеса</span>-->
+<!--                            </label>-->
+<!--                            <label>-->
+<!--                                <input class="hidden-checkbox" data-group="Какой продукт заменяем"-->
+<!--                                       data-param="Zoom Meetings" type="checkbox">-->
+<!--                                <div class="checkbox"></div>-->
+<!--                                <span>Zoom Meetings</span>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="widget directions">
+                        <div class="widget__title">
+                            <h4>Направления</h4>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 14.1549L17.244 8.91081C17.5695 8.58537 18.0971 8.58537 18.4225 8.91081C18.748 9.23624 18.748 9.76388 18.4225 10.0893L12.8838 15.628C12.3957 16.1162 11.6042 16.1162 11.1161 15.628L5.57737 10.0893C5.25193 9.76388 5.25193 9.23624 5.57737 8.91081C5.90281 8.58537 6.43044 8.58537 6.75588 8.91081L12 14.1549Z"
+                                      fill="#7E97A6"/>
+                            </svg>
+                        </div>
+                        <div class="widget__body">
+                            <label>
+                                <input class="hidden-checkbox" data-group="Категория" data-param="Виртуализация"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Виртуализация</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Категория" data-param="ВКС, Коммуникации"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>ВКС, Коммуникации</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Категория" data-param="Операционные системы"
+                                       type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Операционные системы</span>
+                            </label>
+                            <label>
+                                <input class="hidden-checkbox" data-group="Категория"
+                                       data-param="Системное ПО и администрирование" type="checkbox">
+                                <div class="checkbox"></div>
+                                <span>Системное ПО и администрирование</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn hide-filter-btn">Скрыть фильтр</button>
+            </form>
+        </div>
+        <div class="filter__right">
+            <h3>Альтернативные вендоры и продукты взамен ушедших с рынка</h3>
+            <div class="vendors-list">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

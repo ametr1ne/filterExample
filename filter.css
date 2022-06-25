@@ -143,8 +143,9 @@ h1, h2, h3, h4, a, p {
 }
 .filter .widget__body .hidden-checkbox:checked ~ .checkbox:before {
   content: "";
-  background: url("mark.svg") no-repeat center;
+  background: url("mark.svg") no-repeat;
   display: block;
+  margin-top: 1px;
   width: 16px;
   height: 16px;
 }
@@ -341,4 +342,4 @@ h1, h2, h3, h4, a, p {
   }
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=filter.css.map */

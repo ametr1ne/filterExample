@@ -4,7 +4,7 @@ const myData = data.slice(0, 79);
 
 const copy = [...myData]
 
-render([])
+render(copy)
 
 function filterOr(oldList, item) {
 
@@ -40,14 +40,19 @@ function render(list) {
     list.forEach(function (item) {
         if (vendorsList[item['Вендор']] === undefined)
         vendorsList[item['Вендор']] = []
-        vendorsList[item['Вендор']].push(item['Продукт'])
+        let product = []
+        product.name = item['Продукт']
+        product.link = item['Ссылка на продукт']
+        vendorsList[item['Вендор']].push(product)
     })
+
+    console.log(vendorsList)
 
     for(const [key, value] of Object.entries(vendorsList)) {
         let elem = ''
 
         value.forEach(function(item) {
-            elem += "<li><a>"+item+"</a></li>"
+            elem += "<li><a href="+ item.link +">"+item.name+"</a></li>"
         })
 
         $('.vendors-list').append('<div class="vendors-list__item">' +
@@ -121,7 +126,7 @@ $('input').on('change', function () {
 })
 
 $('.btn-reset').on('click', function () {
-    render([])
+    render(copy)
 })
 
 /* // Фильтр */
