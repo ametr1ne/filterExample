@@ -4,6 +4,8 @@ const myData = data.slice(0, 79);
 
 const copy = [...myData]
 
+let lastOpenedItem = ''
+
 render(copy)
 
 function filterOr(oldList, item) {
@@ -26,14 +28,14 @@ function filterAnd(list1, list2) {
 }
 
 function render(list) {
+
     $('.vendors-list__item').remove()
+    $('.empty-vendors').remove()
 
     if (list.length === 0) {
         $('.vendors-list').append('<p class="empty-vendors">Настройте фильтры</p>')
         return
     }
-
-    $('.empty-vendors').remove()
 
     let vendorsList = []
 
@@ -46,16 +48,20 @@ function render(list) {
         vendorsList[item['Вендор']].push(product)
     })
 
-    console.log(vendorsList)
-
     for(const [key, value] of Object.entries(vendorsList)) {
         let elem = ''
 
         value.forEach(function(item) {
-            elem += "<li><a href="+ item.link +">"+item.name+"</a></li>"
+            elem += "<li><a target='_blank' href='"+ item.link +"'>"+item.name+"</a></li>"
         })
 
-        $('.vendors-list').append('<div class="vendors-list__item">' +
+        let classname = ''
+
+        if (key === lastOpenedItem) {
+           classname = 'vendors-list__item--opened'
+        }
+
+        $('.vendors-list').append('<div class="vendors-list__item '+ classname +'">' +
             '<div class="vendors-list__title"> ' +
             '<b>' + key + '</b> ' +
             '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> ' +
@@ -72,6 +78,9 @@ function render(list) {
 
     $('.vendors-list__title').on('click', function () {
         $(this).closest('.vendors-list__item').toggleClass('vendors-list__item--opened')
+        if ($(this).closest('.vendors-list__item').hasClass('vendors-list__item--opened')) {
+            lastOpenedItem = $(this).find('b').text()
+        } else lastOpenedItem = ''
     })
 }
 

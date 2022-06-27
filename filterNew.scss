@@ -132,6 +132,7 @@ h1, h2, h3, h4, a, p {
       overflow: auto;
 
       label {
+        cursor: pointer;
         margin-top: 12px;
         display: flex;
         align-items: center;
@@ -159,7 +160,7 @@ h1, h2, h3, h4, a, p {
 
         &:before {
           content: '';
-          background: url("mark.svg") no-repeat;
+          background: url("https://test.yodiz.ru/softlne/logo/desktop/mark.svg") no-repeat;
           display: block;
           margin-top: 1px;
           width: 16px;
@@ -226,7 +227,6 @@ h1, h2, h3, h4, a, p {
     }
 
     ul {
-      text-decoration: none;
       list-style: none;
       margin: 10px 0 0;
       padding: 0;
